@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xom Education - Apprenez l'anglais en 1 an</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #4361ee;
+            --secondary: #3a0ca3;
+            --accent: #4cc9f0;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+            --success: #4bb543;
+        }
+
+        body {
+            background-color: #f5f7ff;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-image {
+            height: 40px;
+            width: auto;
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin-left: 30px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f5f7ff 0%, #e6ebff 100%);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: var(--gray);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(67, 97, 238, 0.4);
+        }
+
+        .whatsapp-button {
+            background: linear-gradient(to right, #25D366, #128C7E);
+        }
+
+        .whatsapp-button:hover {
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        /* Statistics Section */
+        .statistics {
+            padding: 60px 0;
+            background-color: white;
+            text-align: center;
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 50px;
+            margin-top: 40px;
+        }
+
+        .stat {
+            width: 200px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        /* Process Section */
+        .process {
+            padding: 80px 0;
+            background-color: #f8faff;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--primary);
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .step {
+            flex: 1;
+            min-width: 250px;
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .step:hover {
+            transform: translateY(-10px);
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin: 0 auto 20px;
+        }
+
+        .step-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        /* Levels Section */
+        .levels {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .level-card {
+            background-color: var(--light);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-left: 5px solid var(--primary);
+        }
+
+        .level-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .level-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .level-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .level-description {
+            color: var(--gray);
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 80px 0;
+            background-color: #f8faff;
+        }
+
+        .pricing-cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .pricing-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            flex: 1;
+            min-width: 250px;
+            max-width: 350px;
+            transition: transform 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .pricing-card.featured {
+            border: 2px solid var(--primary);
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+
+        .pricing-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .pricing-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .pricing-period {
+            font-size: 1rem;
+            color: var(--gray);
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .pricing-features li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .pricing-features i {
+            color: var(--success);
+            margin-right: 10px;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .benefit-card {
+            background-color: var(--light);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .benefit-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        /* Countries Section */
+        .countries {
+            padding: 80px 0;
+            background-color: #f8faff;
+            text-align: center;
+        }
+
+        .countries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .country {
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .country:hover {
+            transform: translateY(-5px);
+        }
+
+        .country-flag {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .country-name {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Tally Form Section */
+        .registration {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .tally-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .tally-container iframe {
+            border-radius: 10px;
+            width: 100%;
+            height: 800px;
+            border: none;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .contact-info {
+            list-style: none;
+        }
+
+        .contact-info li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--accent);
+            width: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .nav-menu li {
+                margin: 10px 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .process-steps,
+            .pricing-cards {
+                flex-direction: column;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+
+            .pricing-card.featured:hover {
+                transform: translateY(-10px);
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .tally-container {
+                padding: 15px;
+            }
+
+            .tally-container iframe {
+                height: 600px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="xomlogo.jpg" alt="Xom Education" class="logo-image">
+                    <div class="logo-text">Xom Education</div>
+                </div>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="#process">Comment ça marche</a></li>
+                    <li><a href="#levels">Niveaux</a></li>
+                    <li><a href="#pricing">Tarifs</a></li>
+                    <li><a href="#benefits">Avantages</a></li>
+                    <li><a href="#countries">Pays</a></li>
+                    <li><a href="#registration">Inscription</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Parlez Anglais en 1 An Seulement</h1>
+            <p>Savez-vous que le français est parlé par seulement 200 millions de personnes, contre 1,13 milliard pour
+                l'anglais dans le monde ? Imaginez demain, si vous pouviez parler avec ces 1,13 milliard de personnes...
+            </p>
+            <a href="#registration" class="cta-button">Je m'inscris maintenant</a>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="statistics">
+        <div class="container">
+            <h2 class="section-title">L'Anglais Ouvre des Portes</h2>
+            <div class="stats-container">
+                <div class="stat">
+                    <div class="stat-number">1.13B</div>
+                    <div class="stat-label">Personnes parlent anglais</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">200M</div>
+                    <div class="stat-label">Personnes parlent français</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">Du contenu en ligne est en anglais</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process" id="process">
+        <div class="container">
+            <h2 class="section-title">Comment ça marche ?</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Inscription</h3>
+                    <p>Remplissez le formulaire avec vos informations et effectuez le paiement.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Rejoindre WhatsApp</h3>
+                    <p>Vous serez ajouté à deux groupes : "Free speech" pour pratiquer et un autre pour les leçons.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Évaluation Hebdomadaire</h3>
+                    <p>Chaque fin de semaine, nous organisons des interviews pour booster votre confiance.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3 class="step-title">Sécurité et Confidentialité</h3>
+                    <p>Vos données sont protégées. Nous utilisons Zoom et WhatsApp pour un accès facile.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Levels Section -->
+    <section class="levels" id="levels">
+        <div class="container">
+            <h2 class="section-title">Niveaux d'Anglais - Xom</h2>
+            <div class="levels-grid">
+                <div class="level-card">
+                    <div class="level-header">
+                        <div class="level-color" style="background-color: #ff4d4d;"></div>
+                        <h3 class="level-title">A1 – Débutant</h3>
+                    </div>
+                    <p class="level-description">Comprendre et utiliser des expressions simples. Se présenter et
+                        présenter quelqu'un. Poser et répondre à des questions simples.</p>
+                </div>
+                <div class="level-card">
+                    <div class="level-header">
+                        <div class="level-color" style="background-color: #ffcc00;"></div>
+                        <h3 class="level-title">A2 – Élémentaire</h3>
+                    </div>
+                    <p class="level-description">Communiquer dans des situations quotidiennes. Décrire sa famille, sa
+                        routine, son environnement. Comprendre des phrases courantes.</p>
+                </div>
+                <div class="level-card">
+                    <div class="level-header">
+                        <div class="level-color" style="background-color: #ff9900;"></div>
+                        <h3 class="level-title">B1 – Intermédiaire</h3>
+                    </div>
+                    <p class="level-description">Gérer des situations en voyage. Rédiger des textes simples. Exprimer
+                        ses opinions, projets, rêves. Tenir une conversation sur des sujets familiers.</p>
+                </div>
+                <div class="level-card">
+                    <div class="level-header">
+                        <div class="level-color" style="background-color: #4CAF50;"></div>
+                        <h3 class="level-title">B2 – Intermédiaire avancé</h3>
+                    </div>
+                    <p class="level-description">Comprendre des textes complexes. Parler avec fluidité avec des
+                        anglophones. Donner des opinions détaillées. Rédiger des courriels clairs.</p>
+                </div>
+                <div class="level-card">
+                    <div class="level-header">
+                        <div class="level-color" style="background-color: #2196F3;"></div>
+                        <h3 class="level-title">C1 – Avancé</h3>
+                    </div>
+                    <p class="level-description">Disponible en 2026. Des cours de niveau avancé pour atteindre une
+                        maîtrise professionnelle de l'anglais.</p>
+                </div>
+                <div class="level-card">
+                    <div class="level-header">
+                        <div class="level-color" style="background-color: #9C27B0;"></div>
+                        <h3 class="level-title">C2 – Maîtrise totale</h3>
+                    </div>
+                    <p class="level-description">Bientôt disponible. Une compréhension complète et naturelle de
+                        l'anglais, comme un natif.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 class="section-title">Options de Paiement</h2>
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <h3 class="pricing-title">3 Mois</h3>
+                    <div class="pricing-price">$30</div>
+                    <div class="pricing-period">(17.000 FCFA)</div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Accès aux groupes WhatsApp</li>
+                        <li><i class="fas fa-check"></i> Leçons et corrections</li>
+                        <li><i class="fas fa-check"></i> Évaluations hebdomadaires</li>
+                        <li><i class="fas fa-check"></i> Support en français</li>
+                    </ul>
+                    <a href="#registration" class="cta-button">Choisir ce plan</a>
+                </div>
+                <div class="pricing-card featured">
+                    <h3 class="pricing-title">6 Mois</h3>
+                    <div class="pricing-price">$60</div>
+                    <div class="pricing-period">(34.000 FCFA)</div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Tous les avantages du plan 3 mois</li>
+                        <li><i class="fas fa-check"></i> Économie de 20%</li>
+                        <li><i class="fas fa-check"></i> Sessions Zoom supplémentaires</li>
+                        <li><i class="fas fa-check"></i> Matériel d'étude exclusif</li>
+                    </ul>
+                    <a href="#registration" class="cta-button">Choisir ce plan</a>
+                </div>
+                <div class="pricing-card">
+                    <h3 class="pricing-title">1 An</h3>
+                    <div class="pricing-price">$120</div>
+                    <div class="pricing-period">(67.500 FCFA)</div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Tous les avantages du plan 6 mois</li>
+                        <li><i class="fas fa-check"></i> Économie de 33%</li>
+                        <li><i class="fas fa-check"></i> Accès à vie au matériel</li>
+                        <li><i class="fas fa-check"></i> Certificat de complétion</li>
+                    </ul>
+                    <a href="#registration" class="cta-button">Choisir ce plan</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits" id="benefits">
+        <div class="container">
+            <h2 class="section-title">Pourquoi Apprendre l'Anglais ?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="benefit-title">Langue Internationale</h3>
+                    <p>L'anglais est la langue du travail international, des affaires, des universités, des ONG et de la
+                        technologie. Les meilleures opportunités exigent souvent la maîtrise de l'anglais.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="benefit-title">Accès à l'Information</h3>
+                    <p>95% des informations utiles sur Internet sont en anglais. Les meilleurs livres, formations et
+                        ressources sont souvent disponibles uniquement en anglais.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <h3 class="benefit-title">Voyager Sans Stress</h3>
+                    <p>Vous pouvez visiter plus de 50 pays dans le monde sans parler leur langue si vous parlez anglais.
+                        Communiquez facilement lors de vos voyages.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3 class="benefit-title">Opportunités Professionnelles</h3>
+                    <p>Ne ratez plus d'opportunités d'emploi à cause de la barrière linguistique. Les entreprises
+                        internationales recherchent des personnes bilingues.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3 class="benefit-title">Communication Directe</h3>
+                    <p>Évitez les interprètes coûteux qui ne peuvent pas traduire votre charisme et votre énergie.
+                        Exprimez-vous directement et avec confiance.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="benefit-title">Votre Voix Compte</h3>
+                    <p>Si vous voulez écrire un livre, créer du contenu ou inspirer des gens au-delà de votre pays,
+                        l'anglais est essentiel pour atteindre un public mondial.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countries Section -->
+    <section class="countries" id="countries">
+        <div class="container">
+            <h2 class="section-title">Pays Ciblés</h2>
+            <p>Ce programme est conçu pour l'Afrique francophone (22 pays) et l'Europe</p>
+            <div class="countries-grid">
+                <div class="country">
+                    <div class="country-flag">🇧🇯</div>
+                    <div class="country-name">Bénin</div>
+                </div>
+                <div class="country">
+                    <div class="country-flag">🇧🇫</div>
+                    <div class="country-name">Burkina Faso</div>
+                </div>
+                <div class="country">
+                    <div class="country-flag">🇧🇮</div>
+                    <div class="country-name">Burundi</div>
+                </div>
+                <div class="country">
+                    <div class="country-flag">🇨🇲</div>
+                    <div class="country-name">Cameroun</div>
+                </div>
+                <div class="country">
+                    <div class="country-flag">🇰🇲</div>
+                    <div class="country-name">Comores</div>
+                </div>
+                <div class="country">
+                    <div class="country-flag">🇨🇮</div>
+                    <div class="country-name">Côte d'Ivoire</div>
+                </div>
+                <div class="country">
+                    <div class="country-flag">🇩🇯</div>
+                    <div class="country-name">Djibouti</div>
+                </div>
+                <div class="country">
+                    <div class="country-flag">🇬🇦</div>
+                    <div class="country-name">Gabon</div>
+                </div>
+                <div class="country">
+                    <div class="country-flag">🇬🇳</div>
+                    <div class="country-name">Guinée</div>
+                </div>
+                <div class="country">
+                    <div class="country-flag">🇬🇶</div>
+                    <div class="country-name">Guinée équatoriale</div>
+                </div>
+                <div class="country">
+                    <div class="country-flag">🇲🇱</div>
+                    <div class="country-name">Mali</div>
+                </div>
+                <div class="country">
+                    <div class="country-flag">🇲🇬</div>
+                    <div class="country-name">Madagascar</div>
+                </div>
+                <div class="country">
+                    <div class="country-flag">🇲🇷</div>
+                    <div class="country-name">Mauritanie</div>
+                </div>
+                <div class="country">
+                    <div class="country-flag">🇲🇺</div>
+                    <div class="country-name">Maurice</div>
+                </div>
+                <div class="country">
+                    <div class="country-flag">🇳🇪</div>
+                    <div class="country-name">Niger</div>
+                </div>
+                <div class="country">
+                    <div class="country-flag">🇨🇫</div>
+                    <div class="country-name">République centrafricaine</div>
+                </div>
+                <div class="country">
+                    <div class="country-flag">🇨🇬</div>
+                    <div class="country-name">République du Congo</div>
+                </div>
+                <div class="country">
+                    <div class="country-flag">🇨🇩</div>
+                    <div class="country-name">République démocratique du Congo</div>
+                </div>
+                <div class="country">
+                    <div class="country-flag">🇷🇼</div>
+                    <div class="country-name">Rwanda</div>
+                </div>
+                <div class="country">
+                    <div class="country-flag">🇸🇳</div>
+                    <div class="country-name">Sénégal</div>
+                </div>
+                <div class="country">
+                    <div class="country-flag">🇹🇩</div>
+                    <div class="country-name">Tchad</div>
+                </div>
+                <div class="country">
+                    <div class="country-flag">🇹🇬</div>
+                    <div class="country-name">Togo</div>
+                </div>
+                <div class="country">
+                    <div class="country-flag">🇪🇺</div>
+                    <div class="country-name">Europe</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tally Form Section -->
+    <section class="registration" id="registration">
+        <div class="container">
+            <h2 class="section-title">Inscription au Programme</h2>
+            <div class="tally-container">
+                <iframe src="https://tally.so/r/3jdK69" width="100%" height="800" frameborder="0" marginheight="0"
+                    marginwidth="0" title="Inscription Xom Education">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Xom Education</h3>
+                    <p>Notre mission est de rendre l'apprentissage de l'anglais accessible à tous les francophones, en
+                        leur offrant une méthode efficace et abordable pour maîtriser l'anglais en seulement 1 an.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" id="footerWhatsapp"><i class="fab fa-whatsapp"></i></a>
+
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i> xom49770@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> +223 83 34 80 96</li>
+                        <li><i class="fab fa-whatsapp"></i> WhatsApp: +223 83 34 80 96</li>
+                        <li><i class="fas fa-money-bill-wave"></i> Orange Money: +223 83 34 80 96</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Xom Education. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+
+        // WhatsApp function
+        function openWhatsApp(message = '') {
+            const phone = "0022383348096";
+            const defaultMessage = "Bonjour! Je souhaite m'inscrire au programme Xom Education. Pouvez-vous me donner plus d'informations ?";
+            const finalMessage = message || defaultMessage;
+            const url = `https://wa.me/${phone}?text=${encodeURIComponent(finalMessage)}`;
+            window.open(url, '_blank');
+        }
+
+        // Footer WhatsApp button
+        document.getElementById('footerWhatsapp').addEventListener('click', function (e) {
+            e.preventDefault();
+            openWhatsApp();
+        });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+
+                    // Close mobile menu if open
+                    document.querySelector('.nav-menu').classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
